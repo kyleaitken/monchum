@@ -36,9 +36,10 @@ const View = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
-    overflow: hidden;
-    margin: 50px 250px 0px 250px;
+    height: 90vh;
 `;
 
+    // overflow: hidden;
+    // height: 100vh;
+    // margin: 50px 250px 100px 250px;
 

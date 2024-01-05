@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import ChatContainer from '../containers/ChatContainer';
+import Header from '../components/Header';
 
 const HomeScreen = () => {
     return (
-        <View>
+        <View className='HomeScreenContainer'>
             <Header />
             <ChatContainer />
-            <Footer />
         </View>
     )
 }
@@ -15,4 +15,6 @@ const HomeScreen = () => {
 export default HomeScreen;
 
 const View = styled.div`
+    display: flex;
+    flex-direction: column;
 `;

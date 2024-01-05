@@ -29,10 +29,8 @@ export default ChatBox;
 
 const View = styled.div`
     flex-grow: 1;
-    width: 100%;
+    width: 75%;
     overflow-y: auto;
-    background-color: #f0f0f0;
-    margin-bottom: 150px;
 `;
 
 const MessageView = styled.div`

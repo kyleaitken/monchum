@@ -40,13 +40,12 @@ const UserInput = ({onUserInput}) => {
 export default UserInput;
 
 const View = styled.div`
-    position: fixed;
-    width: 75%;
-    flex-shrink: 0;
+    background-color: #333;
+    height: 100px;
     display: flex;
     flex-direction: row;
-    margin-top: 10px;
-    bottom: 20px;
+    width: 75%;
+    flex-shrink: 0;
 `;
 
 const Input = styled.input`
