@@ -1,19 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
-import ChatContainer from ''
+import ChatContainer from '../containers/ChatContainer';
 
 const HomeScreen = () => {
     return (
-        <HomeScreenContainer>
+        <View>
+            <Header />
             <ChatContainer />
-        </HomeScreenContainer>
+            <Footer />
+        </View>
     )
 }
 
 export default HomeScreen;
 
-const HomeScreenContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    height: 100vh;
+const View = styled.div`
 `;

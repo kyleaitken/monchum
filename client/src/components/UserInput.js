@@ -1,4 +1,4 @@
-import { useState } from 'react/cjs/react.production.min';
+import { useState } from 'react';
 import styled from 'styled-components';
 
 const UserInput = ({onUserInput}) => {
@@ -23,7 +23,7 @@ const UserInput = ({onUserInput}) => {
     };
 
     return (
-        <View>
+        <View className='UserInput'>
             <Input
                 type="text"
                 value={inputText}
@@ -40,9 +40,13 @@ const UserInput = ({onUserInput}) => {
 export default UserInput;
 
 const View = styled.div`
+    position: fixed;
+    width: 75%;
+    flex-shrink: 0;
     display: flex;
     flex-direction: row;
     margin-top: 10px;
+    bottom: 20px;
 `;
 
 const Input = styled.input`

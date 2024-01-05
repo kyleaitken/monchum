@@ -1,5 +1,4 @@
-import './App.css';
-import HomeScreen from './containers/HomeScreen';
+import HomeScreen from './screens/HomeScreen';
 
 
 const App = () => {

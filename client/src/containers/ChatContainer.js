@@ -1,23 +1,33 @@
-import { useState } from 'react/cjs/react.production.min';
+import { useState, useCallback } from 'react';
 import styled from 'styled-components';
+import  getGPTResponse from '../services/api';
+import ChatBox from '../components/ChatBox';
+import UserInput from '../components/UserInput';
 
 const ChatContainer = () => {
-    const [chatHistory, setChatHistory] = useState([]);
+    const dummyMessage = {id: 'You', message: 'This is a sample message.'};
+    const [chatHistory, setChatHistory] = useState([dummyMessage]);
 
-    const handleUserInput = (UserInput) => {
-        const newMessage = {id: 'You', message: UserInput};
+    const handleUserInput = useCallback(async (userInput) => {
+        const newMessage = {id: 'You', message: userInput};
         setChatHistory((prevChatHistory) => [...prevChatHistory, newMessage]);
 
-        // call api function from api.js
-    };
+        // get gpt response from api.js
+        try {
+            const gptResponse = await getGPTResponse(userInput);
+            const newGPTMessage = {id: 'GPT', message: gptResponse};
+            setChatHistory((prevChatHistory) => [...prevChatHistory, newGPTMessage]);
+        } catch (error) {
+            console.error('Error getting GPT response:', error);
+        }
+    }, []);
 
     return (
-        <View>
+        <View className='ChatContainer'>
             <ChatBox messages={chatHistory}/>
             <UserInput onUserInput={handleUserInput}/>
         </View>
     )
-
 };
 
 export default ChatContainer;
@@ -25,7 +35,10 @@ export default ChatContainer;
 const View = styled.div`
     display: flex;
     flex-direction: column;
+    align-items: center;
     height: 100vh;
+    overflow: hidden;
+    margin: 50px 250px 0px 250px;
 `;
 
 
