@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const Header = () => {
     return (
         <View className='header'>
-            <h1>MON CHUM</h1>
+            <h1>mon chum.</h1>
         </View>
     )
 };
@@ -15,7 +15,7 @@ const View = styled.div`
     align-items: center;
     justify-content: flex-start;
     font-family: Arial, sans-serif;
-    width: 100%;
+    width: 70%;
     padding: 10px;
     text-align: left;
     height: 50px;

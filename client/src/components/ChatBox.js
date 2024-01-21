@@ -29,7 +29,7 @@ export default ChatBox;
 
 const View = styled.div`
     flex-grow: 1;
-    width: 75%;
+    width: 50%;
     overflow-y: auto;
 `;
 

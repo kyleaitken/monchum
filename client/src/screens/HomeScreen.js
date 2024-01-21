@@ -17,4 +17,6 @@ export default HomeScreen;
 const View = styled.div`
     display: flex;
     flex-direction: column;
+    max-width: 1400px;
+    margin: 0 auto; 
 `;
