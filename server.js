@@ -1,9 +1,13 @@
 const express = require('express');
 const path = require('path');
+const bodyParser = require('body-parser'); 
+
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 const apiKey = process.env.OPENAI_API_KEY || undefined;
+
+app.use(bodyParser.json());
 
 app.use(express.static(path.join(__dirname, 'client', 'build')));
 
@@ -17,7 +21,7 @@ app.use((req, res, next) => {
 const routes = require('./routes/apiRoutes.js');
 
 // Serve the React app on all routes
-app.get('*', (req, res) => {
+app.get('/', (req, res) => {
   console.log('server.js get');
   res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
 });
